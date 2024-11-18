@@ -10,10 +10,6 @@ const emit = defineEmits(['arrived-or-left', 'delete-student']);
 // Reactive state for presence
 const isStudentPresent = ref(props.student.present);
 
-// Sync `isStudentPresent` with `props.student.present`
-watch(() => props.student.present, (newVal) => {
-  isStudentPresent.value = newVal;
-});
 
 // Notify parent about arrival or departure
 const notifyArrivedOrLeft = () => {
