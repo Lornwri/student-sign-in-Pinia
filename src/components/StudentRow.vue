@@ -7,11 +7,10 @@ const props = defineProps({
 
 const emit = defineEmits(['arrived-or-left', 'delete-student']);
 
-// Reactive state for presence
+// Reactive for presence
 const isStudentPresent = ref(props.student.present);
 
 
-// Notify parent about arrival or departure
 const notifyArrivedOrLeft = () => {
   emit('arrived-or-left', props.student, isStudentPresent.value);
 };
